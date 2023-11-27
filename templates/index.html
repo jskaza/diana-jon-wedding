@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{{ section.content | safe }}
+
+<ul class="mobile-list">
+    {%- set index = get_section(path="_index.md") -%}
+    {%- for p in index.pages %}
+    {%- if p.title != "" %}
+    <li class="mobile-list"><a class="mobile-list" href="{{p.permalink}}">{{p.title}}</a></li>
+    {%- endif %}
+    {% endfor %}
+</ul>
+
+{% endblock content %}

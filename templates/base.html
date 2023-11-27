@@ -1,0 +1,95 @@
+{% set p = section | default(value=page) %}
+{% set title = p.title | default(value="") %}
+{% set description = p.description | default(value="") %}
+{% if p.extra.illus %}
+{% set illus = current_url ~ p.extra.illus %}
+{% endif %}
+{% set full_title = title ~ " ⋅ " ~ config.extra.site_name %}
+<!DOCTYPE HTML>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="{{ description }}" />
+  <link rel="icon" type="image/svg+xml" href="{{ config.extra.icon }}" />
+  <meta property="og:title" content="{{ full_title }}" />
+  <meta property="og:type" content="website" />
+ <!-- <meta property="og:locale" content="fr_FR" />  -->
+  <meta property="og:site_name" content="{{ config.extra.site_name }}" />
+  <meta property="og:url" content="{{ current_url }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{{ full_title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:url" content="{{ current_url }}" />
+  <meta name="twitter:card" content="summary" />
+  {% if illus %}
+  <meta property="og:image" content="{{ illus }}" />
+  <meta name="twitter:image" content="{{ illus }}" />
+  {% else %}
+  {% set default_illus = config.extra.default_illus %}
+  <meta property="og:image" content="{{ get_url(path=default_illus) }}" />
+  <meta name="twitter:image" content="{{ get_url(path=default_illus) }}" />
+  {% endif %}
+  <title>{{ full_title }}</title>
+  <link rel="stylesheet" href="{{ get_url(path='site.css', trailing_slash=false, cachebust=true) | safe }}" media="all" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Glegoo">
+  {% if p.extra.jsonld %}
+
+  {% endif %}
+  <style>
+    * {
+      --primary: {{ config.extra.primary_color }};
+
+      --accent: {{ config.extra.accent_color }};
+    }
+  </style>
+</head>
+<section class="illus"></section>
+
+  <header>
+    <div class="title-container">
+     <h1><a href="/">{{ config.extra.site_name }}</a></h1>
+     <h3>MAY 5, 2024 &nbsp; &nbsp; BOSTON, MA</h3>
+    </div>
+    <ul class="main-list">
+      {%- set index = get_section(path="_index.md") -%}
+      {%- for p in index.pages %}
+      {%- if p.title != "" %}
+      <li class="main-list"><a href="{{p.permalink}}">{{p.title}}</a></li>
+      {%- endif %}
+      {% endfor %}
+     </ul>
+  </header>
+<body>
+
+
+
+  <main>
+    {% if not p.extra.no_title %}
+    {% for anc in p.ancestors %}
+    {% set anc = get_section(path=anc) %}
+    {% if loop.index != 1 %}&mdash;{% endif %}
+    <a href="{{ anc.permalink }}">{{ anc.title }}</a>
+    {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock content %}
+    <!-- <% if current_page.data.prev || current_page.data.next %>
+        <nav>
+          <% if current_page.data.prev %>
+            <a href="/<%= current_page.data.prev %>">⇦ Page précédente</a>
+          <% end%>
+          <% if current_page.data.next %>
+            <a href="/<%= current_page.data.next %>">Page suivante ⇨</a>
+          <% end%>
+        </nav>
+        <% end %> -->
+  </main>
+
+  <!-- <script src="{{ get_url(path='theme.js', trailing_slash=false) | safe }}" integrity="sha384-{{ get_hash(path='theme.js', sha_type=384, base64=true) | safe }}"></script>  -->
+</body>
+
+</html>
