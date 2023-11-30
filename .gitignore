@@ -1,3 +1,4 @@
 templates/rsvp_raw.html
 node_modules/
 *.DS_Store
+static/processed_images/
