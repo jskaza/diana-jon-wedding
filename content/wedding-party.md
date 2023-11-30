@@ -19,13 +19,3 @@ title="Wedding Party"
 <i>Bridesmaid</i><br>
 <i>Friend of the Bride</i>
 </div>
-
-
-<style>
-label {
-display: block;
-margin-bottom: 10px;
-}
-</style>
-</head>
-<body>
