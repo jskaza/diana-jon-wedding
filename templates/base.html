@@ -1,5 +1,5 @@
 {% set p = section | default(value=page) %}
-{% set title = p.title | default(value="") %}
+{% set title = p.title | default(value="Home") %}
 {% set description = p.description | default(value="") %}
 {% if p.extra.illus %}
 {% set illus = current_url ~ p.extra.illus %}
@@ -35,8 +35,9 @@
   {% endif %}
   <title>{{ full_title }}</title>
   <link rel="stylesheet" href="{{ get_url(path='site.css', trailing_slash=false, cachebust=true) | safe }}" media="all" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Glegoo">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap"">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap"">
+  <!--<script src="{{ get_url(path='theme.js', trailing_slash=false) | safe }}"></script>  -->
   {% if p.extra.jsonld %}
 
   {% endif %}
@@ -47,26 +48,28 @@
       --accent: {{ config.extra.accent_color }};
     }
   </style>
-</head>
-<section class="illus"></section>
 
+
+
+</head>
+
+<section class="illus"></section>
   <header>
     <div class="title-container">
      <h1><a href="/">{{ config.extra.site_name }}</a></h1>
-     <h3>MAY 5, 2024 &nbsp; &nbsp; BOSTON, MA</h3>
     </div>
-    <ul class="main-list">
-      {%- set index = get_section(path="_index.md") -%}
-      {%- for p in index.pages %}
-      {%- if p.title != "" %}
-      <li class="main-list"><a href="{{p.permalink}}">{{p.title}}</a></li>
-      {%- endif %}
-      {% endfor %}
+    <ul class="main-list" style="margin-bottom: 0px">
+      <li class="main-list underline-on-hover"><a href="/">Home</a></li>
+      <li class="main-list underline-on-hover"><a href="/wedding-party">Wedding Party</a></li>
+      <li class="main-list underline-on-hover"><a href="/our-story">Our Story</a></li>
+      <li class="main-list underline-on-hover"><a href="/schedule">Schedule</a></li>
+      <li class="main-list underline-on-hover"><a href="/accomodations">Accomodations</a></li>
+      <li class="main-list underline-on-hover"><a href="/registry">Registry</a></li>
+      <li class="main-list underline-on-hover"><a href="/rsvp">RSVP</a></li>
      </ul>
+     <div class="header-line"></div>
   </header>
 <body>
-
-
 
   <main>
     {% if not p.extra.no_title %}
@@ -88,8 +91,10 @@
         </nav>
         <% end %> -->
   </main>
-
-  <!-- <script src="{{ get_url(path='theme.js', trailing_slash=false) | safe }}" integrity="sha384-{{ get_hash(path='theme.js', sha_type=384, base64=true) | safe }}"></script>  -->
 </body>
+<footer>
+  ❤ Crafted with love by Jon<br>
+  Issues with the site? Send us an <a href="mailto:dianajonwedding2024@gmail.com">email</a>.
+</footer>
 
 </html>

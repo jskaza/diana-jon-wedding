@@ -5,12 +5,49 @@
 {{ section.content | safe }}
 
 <ul class="mobile-list">
-    {%- set index = get_section(path="_index.md") -%}
-    {%- for p in index.pages %}
-    {%- if p.title != "" %}
-    <li class="mobile-list"><a class="mobile-list" href="{{p.permalink}}">{{p.title}}</a></li>
-    {%- endif %}
-    {% endfor %}
+    <li class="mobile-list"><a class="mobile-list" href="/">Home</a></li>
+    <li class="mobile-list"><a href="/wedding-party">Wedding Party</a></li>
+    <li class="mobile-list"><a href="/our-story">Our Story</a></li>
+    <li class="mobile-list"><a href="/schedule">Schedule</a></li>
+    <li class="mobile-list"><a href="/accomodations">Accomodations</a></li>
+    <li class="mobile-list"><a href="https://www.crateandbarrel.com/">Registry</a></li>
+    <li class="mobile-list"><a href="/rsvp">RSVP</a></li>
 </ul>
+
+<p style="font-size: 26px; text-align:center">
+May 5, 2024 · Boston, MA
+</p>
+
+<div id="countdown"></div>
+
+<script>
+  // Set the target date (year, month (0-indexed), day, hours, minutes, seconds)
+  const targetDate = new Date(2024, 4, 5, 15, 30, 0);
+
+  function updateCountdown() {
+    const currentDate = new Date();
+    const timeDifference = targetDate - currentDate;
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    if (days == 0) {
+      document.getElementById('countdown').innerHTML = `
+      <p style="font-size: 20px; text-align:center">Today is the day!</p>
+    `;
+    }
+    else if (days < 0){
+      document.getElementById('countdown').innerHTML = `
+      <p style="font-size: 20px; text-align:center">Congrats!</p>
+    `;
+    }
+    else {
+      document.getElementById('countdown').innerHTML = `
+      <p style="font-size: 20px; text-align:center">${days} days to go!</p>
+    `;
+    }
+  }
+
+
+  // Initial call to set the countdown
+  updateCountdown();
+</script>
 
 {% endblock content %}

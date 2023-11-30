@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "pagecrypt": "^6.1.1"
+  },
+  "scripts": {
+    "serve": "pagecrypt templates/rsvp_raw.html templates/rsvp.html password && zola serve"
+  }
+}
