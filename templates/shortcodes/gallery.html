@@ -2,7 +2,7 @@
     {% for asset in page.assets -%}
       {%- if asset is matching("[.](jpg|jpeg|webp)$") -%}
       {% set image = resize_image(path=asset, height=500, width=400) %}
-        <a href="{{ image.url }}" target="_blank">
+        <a href="{{ get_url(path=asset) }}" target="_blank">
           <img src="{{ image.url }}" title="{{ asset | split(pat='/') | last | split(pat='.') | first }}"/>
         </a>
       {%- endif %}
