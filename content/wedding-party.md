@@ -7,7 +7,7 @@ title="Wedding Party"
 <i>Best Man</i><br>
 <i>Brother of the Groom</i>
 
-<b>Celena Kellerman</b><br>
+<b>Celena Kellermann</b><br>
 <i>Matron of Honor</i><br>
 <i>Cousin of the Bride</i>
 

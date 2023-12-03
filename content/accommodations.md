@@ -9,14 +9,14 @@ There are room blocks for wedding guests at two local hotels. Located in Quincy,
 
 [1000 Marriott Dr, Quincy, MA 02169](https://maps.app.goo.gl/45wL1tyaEH2p24VaA)
 
-Book at a discounted rate using [this link](https://www.marriott.com/events/start.mi?id=1700578393589&key=GRP)
+Book using [this link](https://www.marriott.com/events/start.mi?id=1700578393589&key=GRP)
 
 
 <div style="font-weight: bold; text-decoration:underline">Boston Marriott Copley Place</div>
 
 [110 Huntington Ave, Boston, MA 02116](https://maps.app.goo.gl/x8zVKSSkBjRRcuJAA)
 
-Book at a discounted rate using [this link](https://book.passkey.com/e/50727988)
+Book using [this link](https://book.passkey.com/e/50727988)
 
 </div>
 
