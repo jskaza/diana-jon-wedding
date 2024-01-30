@@ -2,7 +2,7 @@
 title="Registry"
 +++
 
-Seeing that we are relocating shortly after our wedding, we have a small registry with Crate & Barrel.
+Your presence at our wedding is the greatest gift we could ask for! If you would like to honor us with a gift, we have registered with Crate & Barrel.
 
 <div style="text-align: center">
 <a href="https://www.crateandbarrel.com/gift-registry/diana-homsy-and-jonathan-skaza/r7022896"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
