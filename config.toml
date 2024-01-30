@@ -18,8 +18,7 @@ highlight_code = false
 [extra]
 # Put all your custom variables here
 site_name = "DIANA & JONATHAN"
-icon = "image.png"
-icon_desc = "Icon of the course"
+icon = "favicon.ico"
 description = "A great course!"
 illus = "vt.webp"
 default_illus = "vt.webp"
