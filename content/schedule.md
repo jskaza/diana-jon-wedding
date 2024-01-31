@@ -23,6 +23,3 @@ Granite Links Golf Club
 6:00pm ET
 </div>
 
-<!-- <div style="text-align: center"> -->
-*Dress Code: We invite you to celebrate with us in black tie attire, though it is not mandatory. Feel free to dress in your finest evening wear.*
-<!-- </div> -->
