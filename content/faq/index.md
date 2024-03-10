@@ -10,3 +10,7 @@ title="FAQ"
 
 
 **A:** Thank you for thinking of us! We have chosen not to have a wedding registry. Your presence at our celebration is a wonderful gift in itself.
+
+**Q: What is the parking situation?**
+
+There is plenty of free parking at both the church and the reception venue.
